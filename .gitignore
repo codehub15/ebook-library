@@ -1,0 +1,12 @@
+node_modules
+package-lock.json
+.env
+.now
+
+server/node_modules
+server/package-lock.json
+server/.env
+
+client/node_modules
+client/package-lock.json
+client/.env
