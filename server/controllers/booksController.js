@@ -42,7 +42,8 @@ exports.postBook = async (req, res, next) => {
             // originName: req.file.originalname,
             // uploadName: req.file.filename,
             bookFileName: req.files.file[0].filename,
-            cover: "/files/" + req.files.cover[0] ? req.files.cover[0].filename : 'default-cover-book',
+            // cover: "/files/" + req.files.cover[0] ? req.files.cover[0].filename : 'default-cover-book',
+            cover: "/files/" + req.files.cover[0].filename,
             year: req.body.year
         })
         console.log("book:", book)
