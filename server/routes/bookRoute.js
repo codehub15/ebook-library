@@ -8,7 +8,6 @@ const fileUpload = require("../middleware/fileUpload")
 Route.get("/", getBooks)
 Route.get("/:id", auth, getBook)
 Route.post("/", auth, isAdmin, fileUpload, postBook)
-Route.post("/:id", auth, isAdmin, fileUpload, postBookPath)
 Route.put("/:id/:filename", auth, isAdmin, putBook)
 Route.delete("/:id/:filename", auth, isAdmin, deleteBook)
 
