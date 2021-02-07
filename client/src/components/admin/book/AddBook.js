@@ -63,6 +63,7 @@ export default function AddBook() {
                             name="file"
                             id="book-file"
                             placeholder="Only .pdf"
+                            accept="application/pdf"
                             onChange={(e) => setFileBook(e.target.files[0])}
                         />
                         <label htmlFor="book-cover">Book Cover</label>
@@ -71,6 +72,7 @@ export default function AddBook() {
                             name="cover"
                             id="book-cover"
                             placeholder="Only .png or .jpeg"
+                            accept="image/png, image/jpeg image/jpg"
                             onChange={(e) => setFileCover(e.target.files[0])}
                         />
                         <button type="submit" className="btn btn-submit">add book</button>
