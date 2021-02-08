@@ -5,12 +5,12 @@ import { AuthContext } from "../../context/AuthContext"
 export default function Logout() {
     const { isAuth, setIsAuth, setCookies } = useContext(AuthContext)
 
-    // useEffect(() => {
-    fetch("/users/logout")
-    localStorage.clear();
-    setCookies(false);
-    setIsAuth(false)
-    // }, [])
+    useEffect(() => {
+        fetch("/users/logout")
+        localStorage.clear();
+        setCookies(false);
+        setIsAuth(false)
+    }, [])
 
     return (
         isAuth ?

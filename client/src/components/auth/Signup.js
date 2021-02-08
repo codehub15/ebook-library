@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { Redirect } from 'react-router-dom'
 import { AuthContext } from "../../context/AuthContext"
 import '../../style/auth.scss'
@@ -8,15 +8,13 @@ export default function Signup() {
     const [userName, setUserName] = useState(null)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
-    const [role] = useState("User")
 
     const handleSignUp = async (e) => {
         e.preventDefault()
         const userData = {
             userName,
             email,
-            password,
-            role
+            password
         }
         const options = {
             method: 'POST',
@@ -39,12 +37,6 @@ export default function Signup() {
         }
         if (email == null || email.indexOf('@') < 1 && email.lastIndexOf(".") < 2) {
             alert("Please enter correct email.")
-        }
-        // check user role 
-        if (data.user.role === "Admin") {
-            setIsAdmin(true)
-        } else {
-            setIsAdmin(false)
         }
         // check account creation
         if (data.success) {
