@@ -1,65 +1,36 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Logout from './components/Logout'
+import Home from './components/Home'
+import NotFound from './components/NotFound'
+import Login from './components/auth/Login'
+import Signup from './components/auth/Signup'
+import Logout from './components/auth/Logout'
+import Admin from './components/admin/Admin'
 import Account from './components/Account'
 import UserAccount from './components/UserAccount'
-import Admin from './components/admin/Admin'
 import Users from './components/Users'
-import Ebooks from './pages/Books'
-import NotFound from './components/NotFound'
-import { AuthContext } from "./context/AuthContext"
-// import AddBook from './components/admin/book/AddBook'
-// import EditBook from './components/admin/book/EditBook'
-// import DeleteBook from './components/admin/book/DeleteBook'
-
+import Ebooks from './components/Books'
+import AddBook from './components/admin/book/AddBook'
+import EditBook from './components/admin/book/EditBook'
+import DeleteBook from './components/admin/book/DeleteBook'
+import BookRead from './components/BookRead'
 
 export default function Routes() {
-    const { isAuth, setIsAuth, isAdmin, setIsAdmin } = useContext(AuthContext)
-
     return (
         <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/ebooks"
-                render={(props) =>
-                    <Ebooks {...props}
-                        isAuth={isAuth} setIsAuth={setIsAuth} />}
-            />
-            <Route path="/login"
-                render={(props) =>
-                    <Login {...props}
-                        isAuth={isAuth} setIsAuth={setIsAuth} />}
-            />
+            <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/account"
-                render={(props) =>
-                    <Account {...props}
-                        isAuth={isAuth} setIsAuth={setIsAuth} />}
-            />
-            <Route path="/admin"
-                render={(props) =>
-                    <Admin {...props}
-                        isAuth={isAuth} setIsAuth={setIsAuth}
-                        isAdmin={isAdmin} setIsAdmin={setIsAdmin}
-                    />}
-            />
-            <Route path="/userAccount"
-                render={(props) =>
-                    <UserAccount {...props}
-                        isAuth={isAuth} setIsAuth={setIsAuth} />}
-            />
-            <Route path="/logout"
-                render={(props) =>
-                    <Logout {...props}
-                        isAuth={isAuth} setIsAuth={setIsAuth} />}
-            />
-            {/* <Route path="/add-book" component={AddBook} />
-            <Route path="/edit-book" component={EditBook} />
-            <Route path="/delete-book" component={DeleteBook} /> */}
-
+            <Route path="/logout" component={Logout} />
+            <Route path="/account" component={Account} />
+            <Route path="/userAccount" component={UserAccount} />
+            <Route path="/admin" component={Admin} />
             <Route path="/users" component={Users} />
+            <Route path="/ebooks" component={Ebooks} />
+            <Route path="/read-book/:id" component={BookRead} />
+            <Route path="/add-book" component={AddBook} />
+            <Route path="/edit-book" component={EditBook} />
+            <Route path="/delete-book" component={DeleteBook} />
             <Route component={NotFound} />
         </Switch>
     )
