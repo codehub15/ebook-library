@@ -2,15 +2,6 @@ import React, { useState, useContext } from 'react'
 import { Redirect } from "react-router-dom"
 import axios from 'axios'
 import { AuthContext } from "../../../context/AuthContext"
-// import { FilePond, registerPlugin } from "react-filepond"
-// import FilePondPluginImagePreview from "filepond-plugin-image-preview"
-// import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type'
-// import "filepond/dist/filepond.min.css"
-// import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-
-// registerPlugin(
-//     FilePondPluginImagePreview, FilePondPluginFileValidateType
-// )
 
 export default function AddBook() {
     const { isAdmin, isAuth, token } = useContext(AuthContext)
@@ -77,25 +68,6 @@ export default function AddBook() {
                         />
                         <button type="submit" className="btn btn-submit">add book</button>
                     </form>
-
-                    {/* <FilePond
-                        name="file-upload"
-                        files={file}
-                        onupdatefiles={setFile}
-                        onprocessfile={() => {
-                            setFile()
-                        }}
-                        server={{
-                            url: "http://localhost:5000/books/" + userData._id,
-                            process: {
-                                headers: {
-                                    'x-auth': token
-                                }
-                            }
-                        }}
-                        maxFiles={1}
-                        className="filepath"
-                    /> */}
                 </div>
             )
                 : <Redirect to="/login" />
