@@ -1,9 +1,5 @@
 import React from 'react'
-import { NavLink, Route, Switch } from 'react-router-dom'
-import AddBook from './book/AddBook'
-import EditBook from './book/EditBook'
-import DeleteBook from './book/DeleteBook'
-import Users from '../Users'
+import { NavLink } from 'react-router-dom'
 
 export default function NavbarAdmin() {
     return (
@@ -17,13 +13,6 @@ export default function NavbarAdmin() {
                 <h3>manage users</h3>
                 <NavLink className="main-nav-link" to="/users" activeClassName="active">Users</NavLink>
             </nav>
-
-            <Switch>
-                <Route path="/add-book" component={AddBook} />
-                <Route path="/edit-book" component={EditBook} />
-                <Route path="/delete-book" component={DeleteBook} />
-                <Route path="/users" component={Users} />
-            </Switch>
         </div>
     )
 }
