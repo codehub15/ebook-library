@@ -1,7 +1,6 @@
 const multer = require("multer")
 
 const uploadPath = __dirname + "/../../client/public/files"
-// const uploadPath = __dirname + "/../../client/src/files"
 
 const upload = multer({
     dest: uploadPath
