@@ -4,7 +4,7 @@ const User = require("../models/userSchema")
 // get all users
 exports.getUsers = async (req, res, next) => {
     try {
-        // const users = await User.find().populate("books", "-__v, -sourceLink, -quantity, -isBorrow")
+        // const users = await User.find().populate("books", "-__v, -title, -cover")
         const users = await User.find()
         res.json({ success: true, users: users })
     }
@@ -31,18 +31,13 @@ exports.getUser = async (req, res, next) => {
 exports.postUser = async (req, res, next) => {
     try {
         const user = new User(req.body)
-        console.log("signup:", user)
         const token = user.generateAuthToken()
         await user.save()
         const data = user.getPublicFields()
-        // setup session
         req.session.token = token
-        // req.session.user = user
         req.session.user = data
         res.cookie("login", true)
         res.json({ success: true, user: data, token: token })
-        // res.header("x-auth", token).json({ success: true, user: data})
-        // res.cookie("x-auth", token, { secure: true }).json({ success: true, user: data })
     }
     catch (err) {
         next(err)
@@ -81,21 +76,16 @@ exports.deleteUser = async (req, res, next) => {
 // login
 exports.login = async (req, res, next) => {
     const { email, password } = req.body
-    console.log("login:", req.body)
     try {
         const user = await User.findOne({ email })
         const valid = await user.checkPassword(password)
         if (!valid) throw httpError(403)
         let token = user.generateAuthToken()
-        console.log("token:", token)
         const data = user.getPublicFields()
         req.session.token = token
         req.session.user = data
         res.cookie("login", true)
         res.json({ success: true, user: data, token: token })
-        // res.header("x-auth", token).json({ success: true, user: data })
-        // res.json({ success: true, user: data, token: token })
-        // res.cookie("x-auth", token).json({ success: true, user: data })
     }
     catch (err) {
         next(err)
