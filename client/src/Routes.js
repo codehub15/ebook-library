@@ -6,9 +6,8 @@ import Login from './components/auth/Login'
 import Signup from './components/auth/Signup'
 import Logout from './components/auth/Logout'
 import Admin from './components/admin/Admin'
-import Account from './components/Account'
 import UserAccount from './components/UserAccount'
-import Users from './components/Users'
+import Users from './components/admin/Users'
 import Ebooks from './components/Books'
 import AddBook from './components/admin/book/AddBook'
 import EditBook from './components/admin/book/EditBook'
@@ -22,7 +21,6 @@ export default function Routes() {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/logout" component={Logout} />
-            <Route path="/account" component={Account} />
             <Route path="/userAccount" component={UserAccount} />
             <Route path="/admin" component={Admin} />
             <Route path="/users" component={Users} />
