@@ -1,0 +1,35 @@
+nav {
+    padding: 0.1rem 0.5rem;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        li {
+            margin: 0rem 0.5rem;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2em;
+            text-shadow:
+            2px 2px 0 #000,
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+            &:hover {
+                color: rgb(181, 95, 207);
+            }
+        }
+        .active {
+            color: #01D2DF;
+        }
+    }
+
+    .nav-li-div {
+        display: flex;
+
+    }
+}
