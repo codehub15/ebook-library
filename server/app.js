@@ -6,6 +6,7 @@ const { setCors } = require("./middleware/security")
 const cookieParser = require("cookie-parser")
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const path = require("path")
 
 // import all routes
 const indexRoute = require("./routes/indexRoute")
@@ -33,6 +34,7 @@ app.use(session({
 app.use(express.json())
 app.use(setCors)
 app.use(cookieParser())
+app.use(express.static("../client/build"))
 
 // use routes
 app.use("/", indexRoute)
