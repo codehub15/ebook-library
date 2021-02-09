@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext"
 import '../../style/auth.scss'
 
 export default function Signup() {
-    const { isAuth, setIsAuth, setIsAdmin, token, setToken, setCookies, setUserData } = useContext(AuthContext)
+    const { isAuth, setIsAuth, token, setToken, setCookies, setUserData } = useContext(AuthContext)
     const [userName, setUserName] = useState(null)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
@@ -26,7 +26,6 @@ export default function Signup() {
         }
         const response = await fetch('/users', options)
         const data = await response.json()
-        console.log(response.headers.get("x-auth"))
 
         // check user input 
         if (userName === "" || email === "" || password === "") {
@@ -56,7 +55,7 @@ export default function Signup() {
     return (
         <div className="form-container">
             <h2>Sign up</h2>
-            {isAuth ? <Redirect to="/account" /> :
+            {isAuth ? <Redirect to="/userAccount" /> :
                 <form onSubmit={handleSignUp}>
                     <input type="text" name="userName" placeholder="* Enter Name" required minLength="2" maxLength="15" onChange={(e) => setUserName(e.target.value)} />
                     <input type="email" name="email" placeholder="* Enter Email" required onChange={(e) => setEmail(e.target.value)} />
