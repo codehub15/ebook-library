@@ -10,6 +10,7 @@ Route.post("/", validateInputs(), postUser)
 Route.put("/:id", auth, putUser)
 Route.delete("/:id", auth, deleteUser)
 Route.post("/login", login)
+Route.get("/", auth, isAdmin, getUsers)
 Route.get("/logout", logout)
 
 module.exports = Route
