@@ -2,10 +2,8 @@ import React, { useContext } from 'react'
 import { Redirect } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
 
-export default function UserAccount(props) {
+export default function UserAccount() {
     const { isAuth, userData } = useContext(AuthContext)
-    console.log("user data api:", userData)
-    console.log("user props:", props.user)
 
     return (
         isAuth ? (<div className="component-container user-account" >

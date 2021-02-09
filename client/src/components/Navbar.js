@@ -28,7 +28,7 @@ export default function Navbar() {
                                     <NavLink className="main-nav-link" to="/ebooks" activeClassName="active">eBooks</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className="main-nav-link" to="/account" activeClassName="active">My Account</NavLink>
+                                    <NavLink className="main-nav-link" to="/userAccount" activeClassName="active">My Account</NavLink>
                                 </li>
                                 <li>
                                     <NavLink className="main-nav-link" to="/logout" activeClassName="active">Logout</NavLink>
