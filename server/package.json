@@ -1,5 +1,5 @@
 {
-    "name": "server",
+    "name": "ebook-library",
     "version": "1.0.0",
     "author": "O Natalia Alexandra",
     "description": "",
@@ -7,8 +7,7 @@
     "scripts": {
         "start": "node app.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "node build --output public",
-        "build:rss": "node ./.next/serverless/scripts/build-rss.js"
+        "build": "node build --output public"
     },
     "keywords": [],
     "license": "ISC",
