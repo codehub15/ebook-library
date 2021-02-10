@@ -5,6 +5,7 @@
     "description": "",
     "main": "app.js",
     "scripts": {
+        "start": "node app.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "node build --output public",
         "build:rss": "node ./.next/serverless/scripts/build-rss.js"
