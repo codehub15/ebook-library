@@ -1,5 +1,4 @@
 node_modules
-package-lock.json
 .env
 .now
 # now.json
@@ -8,5 +7,5 @@ server/node_modules
 server/.env
 
 client/node_modules
-client/package-lock.json
 client/.env
+client/build
