@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fd54afaf.chunk.css",
+    "main.js": "/static/js/main.1872d28a.chunk.js",
+    "main.js.map": "/static/js/main.1872d28a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/js/2.7be300d0.chunk.js": "/static/js/2.7be300d0.chunk.js",
+    "static/js/2.7be300d0.chunk.js.map": "/static/js/2.7be300d0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3c92a82bdaa6ea9876a49cd594449682.js": "/precache-manifest.3c92a82bdaa6ea9876a49cd594449682.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.fd54afaf.chunk.css.map": "/static/css/main.fd54afaf.chunk.css.map",
+    "static/js/2.7be300d0.chunk.js.LICENSE.txt": "/static/js/2.7be300d0.chunk.js.LICENSE.txt",
+    "static/media/default-cover-book.png": "/static/media/default-cover-book.d2850a53.png",
+    "static/media/ebook.svg": "/static/media/ebook.3c124085.svg",
+    "static/media/app.scss": "/static/media/ebooks.278e4e0b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/js/2.7be300d0.chunk.js",
+    "static/css/main.fd54afaf.chunk.css",
+    "static/js/main.1872d28a.chunk.js"
+  ]
+}
