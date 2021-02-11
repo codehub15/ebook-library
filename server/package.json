@@ -32,6 +32,5 @@
     },
     "engines": {
         "node": "v14.15.4"
-    },
-    "engineStrict": true
+    }
 }
