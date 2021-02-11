@@ -55,7 +55,7 @@ export default function Signup() {
     return (
         <div className="form-container">
             <h2>Sign up</h2>
-            {isAuth ? <Redirect to="/userAccount" /> :
+            {isAuth ? <Redirect to="/ebooks" /> :
                 <form onSubmit={handleSignUp}>
                     <input type="text" name="userName" placeholder="* Enter Name" required minLength="2" maxLength="15" onChange={(e) => setUserName(e.target.value)} />
                     <input type="email" name="email" placeholder="* Enter Email" required onChange={(e) => setEmail(e.target.value)} />

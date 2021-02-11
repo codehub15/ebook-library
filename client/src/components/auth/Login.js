@@ -71,7 +71,7 @@ export default function Login() {
                 (isAdmin ?
                     <Redirect to="/admin" />
                     :
-                    <Redirect to="/userAccount" />
+                    <Redirect to="/ebooks" />
                 )
             }
         </div>
