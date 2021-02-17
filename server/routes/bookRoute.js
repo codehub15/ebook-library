@@ -3,7 +3,7 @@ const { getBooks, getBook, postBook, putBook, deleteBook, postBookPath } = requi
 const auth = require("../middleware/authenticator")
 const isAdmin = require("../middleware/rolesAuth")
 const fileUpload = require("../middleware/fileUpload")
-// const fileDelete = require("../middleware//deleteFile")
+// const fileDelete = require("../middleware/deleteFile")
 
 Route.get("/", getBooks)
 Route.get("/:id", auth, getBook)
