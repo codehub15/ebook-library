@@ -65,10 +65,19 @@ exports.putBook = async (req, res, next) => {
 
 // delete a book
 exports.deleteBook = async (req, res, next) => {
-    const { id } = req.params
+    const { id, filename } = req.params
+    console.log("delete id:", id)
+    console.log("delete filename:", filename)
+    const filePath = __dirname + "'../../../client/public/files/" + filename
     try {
+        // delete from database
         const book = await Book.findByIdAndDelete(id)
         if (!book) throw httpError(404)
+        // delete from upload folder
+        fs.unlink(filePath, (err) => {
+            if (err) throw err;
+            console.log(`file was deleted`);
+        });
         res.json({ success: true, book: book })
     }
     catch (err) {
